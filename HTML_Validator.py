@@ -1,7 +1,4 @@
 #!/bin/python3
-
-
-
 def validate_html(html):
     '''
     This function performs a limited version of html validation by checking whether every opening tag has a corresponding closing tag.
@@ -11,7 +8,7 @@ def validate_html(html):
     >>> validate_html('<strong>example')
     False
     '''
-    html =  _extract_tags(html)
+    html = _extract_tags(html)
     stack = []
     for tag in html:
         if tag.startswith('<') and tag.endswith('>') and tag[1] != '!':
@@ -32,8 +29,6 @@ def validate_html(html):
     # the main difference between your code and the code from class will be that you will have to keep track of not just the 3 types of parentheses,
     # but arbitrary text located between the html tags
 
-
-
 def _extract_tags(html):
     '''
     This is a helper function for `validate_html`.
@@ -47,5 +42,3 @@ def _extract_tags(html):
     '''
     import re
     return re.findall('<[^<]+?>', html)
-     
-
