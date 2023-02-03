@@ -29,6 +29,7 @@ def validate_html(html):
     # the main difference between your code and the code from class will be that you will have to keep track of not just the 3 types of parentheses,
     # but arbitrary text located between the html tags
 
+
 def _extract_tags(html):
     '''
     This is a helper function for `validate_html`.
