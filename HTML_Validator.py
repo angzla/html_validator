@@ -10,6 +10,8 @@ def validate_html(html):
     '''
     html = _extract_tags(html)
     stack = []
+    if len(html) == 0: 
+        return False
     for tag in html:
         if tag.startswith('<') and tag.endswith('>') and tag[1] != '!':
             stack.append(tag)
