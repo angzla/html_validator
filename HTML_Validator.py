@@ -18,11 +18,10 @@ def validate_html(html):
         if tag[1] != '/':
             stack.append(tag)
         else:
-            x = stack[-1][1:-1]
             if len(stack) == 0:
                 return False
             if stack[-1] != '/' and \
-                    tag.startswith('</' + x) and tag.endswith('>'):
+                    tag.startswith('</' + stack[-1][1:-1]) and tag.endswith('>'):
                 stack.pop()
             else:
                 return False
